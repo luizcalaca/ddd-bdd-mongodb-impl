@@ -2,7 +2,7 @@ import { IBook } from "../entities/interfaces/IBook";
 import { BookRepository } from "../repository/BookRepository";
 
 
-class TransferService {
+class BookService {
   private _book: IBook;
 
   constructor(book: IBook, private repository: BookRepository) {
@@ -23,7 +23,7 @@ class TransferService {
   }
 }
 
-export default TransferService;
+export default BookService;
 
 
 

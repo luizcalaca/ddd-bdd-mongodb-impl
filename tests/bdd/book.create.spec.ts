@@ -3,7 +3,7 @@ import { stubInterface } from "ts-sinon";
 import chaiAsPromised from 'chai-as-promised';
 import * as chai from 'chai'
 import sinon from 'sinon'
-import TransferService from "../../src/domain/usecase/BookService";
+import BookService from "../../src/domain/usecase/BookService";
 import { IBook } from "../../src/domain/entities/interfaces/IBook";
 
 chai.use(chaiAsPromised)
@@ -20,7 +20,7 @@ describe('BDD - Creating an Book', () => {
         const bookRepository = new BookRepository(iPersistence)
         bookRepository.create = sinon.stub().returns(BookMock)
 
-        const usecase = new TransferService(BookMock, bookRepository)
+        const usecase = new BookService(BookMock, bookRepository)
 
         expect(usecase.create()).to.be.equal(BookMock)
     })
