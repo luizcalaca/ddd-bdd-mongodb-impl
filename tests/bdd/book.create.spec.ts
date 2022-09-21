@@ -3,7 +3,7 @@ import { stubInterface } from "ts-sinon";
 import chaiAsPromised from 'chai-as-promised';
 import * as chai from 'chai'
 import sinon from 'sinon'
-import TransferService from "../../src/domain/usecase/TransferService";
+import TransferService from "../../src/domain/usecase/BookService";
 import { IBook } from "../../src/domain/entities/interfaces/IBook";
 
 chai.use(chaiAsPromised)

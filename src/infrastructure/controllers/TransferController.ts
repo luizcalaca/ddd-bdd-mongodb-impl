@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { IBook } from '../../domain/entities/interfaces/IBook';
 import { IBookPersistence, BookRepository } from '../../domain/repository/BookRepository';
-import TransferService from '../../domain/usecase/TransferService';
+import TransferService from '../../domain/usecase/BookService';
 import BookODM from '../models/BookODM';
 
 class TransferController {
