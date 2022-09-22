@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { IBook } from '../../domain/entities/interfaces/IBook';
 import { IBookPersistence, BookRepository } from '../../domain/repository/BookRepository';
-import TransferService from '../../domain/usecase/BookService';
+import BookService from '../../domain/usecase/BookService';
 import BookODM from '../models/BookODM';
 
 class BookController {
@@ -20,7 +20,7 @@ class BookController {
       isbn: this._req.body.isbn,
     }
     const repository = new BookRepository(this.persistence)
-    const book = new TransferService(payment, repository);
+    const book = new BookService(payment, repository);
     await book.create()
     return this._res.status(201).json(book);
   }
