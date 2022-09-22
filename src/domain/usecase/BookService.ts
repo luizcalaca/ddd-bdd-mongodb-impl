@@ -21,6 +21,10 @@ class BookService {
     }
     return this.repository.create(payment)
   }
+
+  public read() {
+    return this.repository.read()
+  }
 }
 
 export default BookService;

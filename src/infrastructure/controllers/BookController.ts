@@ -24,5 +24,12 @@ class BookController {
     await book.create()
     return this._res.status(201).json(book);
   }
+
+  public async list() {
+    const repository = new BookRepository(this.persistence)
+    const book = new BookService({} as any, repository);
+    const result = await book.read()
+    return this._res.status(201).json(result);
+  }
 }
 export default BookController;

@@ -4,6 +4,6 @@ import routes from '../infrastructure/routes/Routes';
 
 const app = express();
 app.use(express.json());
-app.use('/transfer', routes);
+app.use('/book', routes);
 
 export default app;
