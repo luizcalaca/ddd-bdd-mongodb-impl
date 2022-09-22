@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import TransferController from '../controllers/TransferController';
+import BookController from '../controllers/BookController';
 
 const routes = Router();
 
-routes.post('/', (req, res) => new TransferController(req, res).create());
+routes.post('/', (req, res) => new BookController(req, res).create());
 
 export default routes;

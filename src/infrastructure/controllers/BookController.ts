@@ -4,7 +4,7 @@ import { IBookPersistence, BookRepository } from '../../domain/repository/BookRe
 import TransferService from '../../domain/usecase/BookService';
 import BookODM from '../models/BookODM';
 
-class TransferController {
+class BookController {
   private _req: Request;
   private _res: Response;
   private persistence: IBookPersistence = new BookODM()
@@ -20,9 +20,9 @@ class TransferController {
       isbn: this._req.body.isbn,
     }
     const repository = new BookRepository(this.persistence)
-    const transfer = new TransferService(payment, repository);
-    transfer.create()
-    return this._res.status(201).json(transfer);
+    const book = new TransferService(payment, repository);
+    await book.create()
+    return this._res.status(201).json(book);
   }
 }
-export default TransferController;
+export default BookController;
