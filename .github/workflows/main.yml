@@ -25,6 +25,8 @@ jobs:
       #   uses: sonarsource/sonarcloud-github-action@master
       #   env:
       #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      - name: Instalar dependências
+        run: npm install
 
       - name: Testes
         run: npm test
