@@ -18,20 +18,15 @@ jobs:
         with:
           node-version: 14
 
-      # - name: Lint
-      #   run: npm run lint
-
-      # - name: SonarCloud
-      #   uses: sonarsource/sonarcloud-github-action@master
-      #   env:
-      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       - name: Instalar dependências
         run: npm install
 
       - name: Testes
         run: npm test
+      - name: Install Railway
+        run: npm i -g @railway/cli
 
-      # - name: Deploy no Railway
-      #   run: |
-      #     npm install -g railway
-      #     railway up
+      - name: Deploy
+        run: railway up
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
