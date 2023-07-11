@@ -3,11 +3,13 @@
 Domaing Driven Design (DDD) + BDD (Behavior Driven Development) + MongoDB implementation
 
 ### Tests
+
 ```js
 npm run test
 ```
 
 ### Running
+
 ```js
 npm install
 npm run dev
