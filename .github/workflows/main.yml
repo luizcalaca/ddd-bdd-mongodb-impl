@@ -23,12 +23,3 @@ jobs:
 
       - name: Testes
         run: npm test
-
-      - name: Install Railway
-        run: npm i -g @railway/cli
-
-      - name: Deploy to Railway
-        run: |
-          RAILWAY_TOKEN=0ea2ac03-9af5-4f44-8145-3b531ac74467 railway run
-        env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
