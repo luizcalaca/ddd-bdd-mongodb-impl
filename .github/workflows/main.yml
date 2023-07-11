@@ -27,7 +27,7 @@ jobs:
       - name: Install Railway
         run: npm i -g @railway/cli
 
-      - name: Railway login
+      - name: Deploy
+        run: railway up
         env:
-          RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
-        run: railway login --api-token $RAILWAY_TOKEN
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
